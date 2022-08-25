@@ -35,6 +35,7 @@ Plug 'mattn/webapi-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'puremourning/vimspector'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " debugger config mapping to use vscode shortcuts
@@ -51,6 +52,8 @@ let g:termdebugger="rust-gdb"
 let g:rust_clip_command = 'xclip -selection clipboard'
 map <C-j> :close<CR>
 map <Leader>r :VimspectorReset<CR>
+map <Leader>b :Cargo build<CR>
+map <Leader>/ :Cargo run<CR>
 
 " Some servers have issues with backup files, see #649.
 set nobackup
