@@ -36,6 +36,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'puremourning/vimspector'
 Plug 'jiangmiao/auto-pairs'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 call plug#end()
 
 " debugger config mapping to use vscode shortcuts
@@ -402,4 +405,13 @@ syntax on
 " enable ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-
+"
+" clang-format to format c,c++ code
+"
+"
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+augroup autoformat_settings
+  autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+augroup END
